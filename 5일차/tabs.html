@@ -41,9 +41,12 @@ body {font-family: Arial;}
   border: 1px solid #ccc;
   border-top: none;
 }
+<<<<<<< HEAD
 .show {
   display: block;
 }
+=======
+>>>>>>> b7f60970684164b8d14b05b1e19afbdca9573fa4
 </style>
 </head>
 <body>
@@ -74,22 +77,19 @@ body {font-family: Arial;}
 
 <script>
 function openCity(evt, cityName) {
-/*   let tablinks = document.getElementsByClassName("tablinks");
-  for(let i=0; i<tablinks.length; i++ ) {
-    tablinks[i].classList.remove("active");      //active 클래스 삭제
-  } */
- document.querySelector(".active")?.classList.remove("active");
 
-  //.tabcontent 태그들에서 show 클래스 삭제
-/*   let tabcontent = document.getElementsByClassName("tabcontent");
-  for(let i=0; i<tablinks.length; i++ ) {
-    tabcontent[i].classList.remove("show");      //active 클래스 삭제
-  } */
-  document.querySelector(".show")?.classList.remove("show");
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
 
-  //document.querySelector("#"+cityName)
-  document.getElementById(cityName).classList.add('show')   //show 클래스 추가
-  evt.target.classList.add('active')    //active  클래스 추가
 }
 </script>
    
