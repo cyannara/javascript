@@ -15,7 +15,8 @@
   <div id="kiwi" class="ele">키위</div>  
   <div id="basket"> </div>
   <div id="template" style="display:none">
-    <div class="fruit" title="사과"><span>사과</span></div>
+    <div class="fruit" title="사과">
+        <span>사과</span><button>삭제</button></div>
   </div>
   <script>
       document.body.addEventListener("click", function(ev){
@@ -23,16 +24,14 @@
           return;   
         }
         let content = ev.target.innerText;
-        let div = `<div class="fruit" title="${content}"><span>${content}</span></div>`
+        let div = `<div class="fruit" title="${content}"><span>${content}<button>삭제</button></span></div>`
         basket.innerHTML += div  //이동
       })
       //이벤트위임(그룹이벤트) : 부모태그에 이벤트를 지정
       basket.addEventListener("click", function(ev){
         let node = ev.target;  //실제로 이벤트가 발생한 대상(태그=타겟)
-        if( node.classList.contains("fruit") ) { // div이면 본인을 삭제
-          node.remove();
-        } else if(node.nodeName == "SPAN") {   //span 태그이면 부모 div를 삭제
-          node.parentNode.remove();
+        if(node.nodeName == "BUTTON") {   //span 태그이면 부모 div를 삭제
+          node.closest("div").remove();
         }
       })
   </script>

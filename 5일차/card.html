@@ -26,34 +26,24 @@
 </style>
 </head>
 <body>
-
 <h2>Card</h2>
+<div id="container"></div>
 
-<div id="container">
-
-</div>
-<div id="template" >
+<div id="template" style="display: none;" >
   <div class="card">
     <img src="img_avatar.png" alt="Avatar" style="width:100%">
     <div class="container">
-      <h4><b>John Doe</b></h4> 
-      <p>Architect & Engineer</p> 
+      <h4><b>name</b></h4>
+      <p>email</p> 
+      <p>company.name</p> 
     </div>
   </div>
 </div>
 <script>
-  let persons = [
-      { name:'choi', skill:'Architect & Engineer', img:'/3일차/img/강아지1.jpg' },
-      { name:'park', skill:'deginner',img:'/3일차/img/강아지2.jpg'  },
-      { name:'kim', skill:'program',img:'/3일차/img/강아지3.jpg'  },
-  ]
+  function personload(){
+    //ajax 호출
 
-  //cloneNode 이용해서 태그 생성
-  for(let i=0; i<persons.length; i++) {
-      let newNode = ``;
-    
   }
-
 </script>
 </body>
 </html> 
